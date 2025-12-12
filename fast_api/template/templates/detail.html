@@ -1,0 +1,14 @@
+ <!--
+{% extends "base.html" %}
+{% block content %}
+-->
+  <h2>{{ item.name }}</h2>
+  <p>{{ item.description or '—' }}</p>
+  <p>
+    <a class="btn" href="/edit/{{ item.id }}">Edit</a>
+    <form action="/delete/{{ item.id }}" method="post" style="display:inline">
+      <button class="btn" type="submit" onclick="return confirm('Delete this item?')">Delete</button>
+    </form>
+  </p>
+  <p><a href="/">Back to list</a></p>
+ <!--{% endblock %}-->

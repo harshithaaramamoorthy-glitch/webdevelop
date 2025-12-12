@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if item %}
+    <h2>Edit Item</h2>
+  {% else %}
+    <h2>Create Item</h2>
+  {% endif %}
+
+  <form method="post" action="{{ action }}">
+    <label>
+      Name
+      <input name="name" required value="{{ item.name if item else '' }}">
+    </label>
+    <label>
+      Description
+      <textarea name="description">{{ item.description if item else '' }}</textarea>
+    </label>
+
+    <button type="submit" class="btn">{{ 'Update' if item else 'Create' }}</button>
+    <a href="/" class="btn">Cancel</a>
+  </form>
+{% endblock %}

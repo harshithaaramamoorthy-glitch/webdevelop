@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}FastAPI App{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    /* minimal in-file fallback if you don't add static/style.css */
+    body { font-family: Arial, Helvetica, sans-serif; margin: 24px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    form input, form textarea { display:block; margin-bottom:8px; padding:8px; width:100%; box-sizing:border-box }
+    .item { border-bottom: 1px solid #ddd; padding:12px 0; }
+    .actions { margin-top:8px; }
+    .btn { padding:6px 10px; margin-right:6px; text-decoration:none; border:1px solid #ccc; background:#f6f6f6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><a href="/">FastAPI</a></h1>
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
